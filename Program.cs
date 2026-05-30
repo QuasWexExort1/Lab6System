@@ -3,12 +3,10 @@ using MongoDB.Driver;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// MongoDB
 builder.Services.AddSingleton<IMongoClient>(
     new MongoClient("mongodb://localhost:27017")
 );
 
-// Наш сервис
 builder.Services.AddSingleton<MongoService>();
 
 builder.Services.AddControllers();
